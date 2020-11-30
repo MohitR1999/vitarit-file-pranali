@@ -5,7 +5,7 @@ import logging
 import time
 import getpass
 import colorama
-
+from Crypto.Cipher import PKCS1_OAEP
 from colorama import Fore,Style,Back
 colorama.init()
 
@@ -125,8 +125,8 @@ def main(args):
     #Authenticate KDC
     clientID = getpass.getpass("Enter your client ID: ")
     pswd = getpass.getpass("Enter password to encrypt: ")
-    # encrypted_msg = encrypt_private_key(clientID, pswd)
-    if(authenticate(pswd) is False):
+    encrypted_msg = encrypt_private_key(clientID, pswd)
+    if(authenticate(encrypted_msg) is False):
         print(Fore.RED + "Incorrect clientID or password. Please try again"+Style.RESET_ALL)
         return
 
@@ -136,7 +136,7 @@ def main(args):
     print("########## Welcome to Vitarit File Pranali ########## \n")
     while(1):
       try:
-        command = input(Fore.GREEN + "vfp@shivam$ " + Style.RESET_ALL).split(" ")
+        command = input(Fore.GREEN + "vfp@maxx$ " + Style.RESET_ALL).split(" ")
         if command[0] == "cat":
             get(master, command[1])
         elif command[0] == "put":
