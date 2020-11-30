@@ -136,7 +136,7 @@ def main(args):
     print("########## Welcome to Vitarit File Pranali ########## \n")
     while(1):
       try:
-        command = input(Fore.GREEN + "vfp@maxx$ " + Style.RESET_ALL).split(" ")
+        command = input(Fore.CYAN + "vfp@maxx$ " + Style.RESET_ALL).split(" ")
         if command[0] == "cat":
             get(master, command[1])
         elif command[0] == "put":
