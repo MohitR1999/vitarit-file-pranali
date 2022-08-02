@@ -1,4 +1,4 @@
-# PyDFS
+# Vitarit File Pranali
 
 # Demo:
  1. File server registration with KDC [demo](https://www.youtube.com/watch?v=9eRtdPKmHqA)
